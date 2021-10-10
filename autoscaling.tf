@@ -5,7 +5,7 @@ resource "aws_launch_configuration" "as_conf01" {
   image_id        = var.aws_amis[var.aws_region]
   instance_type   = var.instance_type
   key_name        = aws_key_pair.ec2_public_key.id
-  security_groups = [aws_security_group.webserver.id]
+  security_groups = aws_security_group.webserver.id
   user_data       = filebase64("script.sh")
 }
 
@@ -17,7 +17,7 @@ resource "aws_autoscaling_group" "as01" {
   desired_capacity     = 4
   min_size             = 2
   max_size             = 4
-  target_group_arns    = [aws_alb_target_group.alb_tg_webserver.arn]
+  target_group_arns    = aws_alb_target_group.alb_tg_webserver.arn
 }
 
 # AWS AUTO SCALING POLICY UP
