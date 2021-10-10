@@ -41,7 +41,7 @@ Deploy the code in your AWS account with Terraform
 
 **Architecture**
 
-![alt text](http:/github.com/cloudacia/rackspace.png)
+![Image of Yaktocat](http:/github.com/cloudacia/rackspace.png)
 
 **Contributing**
 
