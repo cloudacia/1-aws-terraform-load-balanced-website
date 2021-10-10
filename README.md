@@ -35,6 +35,7 @@ Deploy the code in your AWS account with Terraform
 |-- variables.tf          # Code variables
 |-- script.sh             # Script to install Nginx
 |-- ssh_keys              # ssh public key
+|-- diagram.poing         # AWS network layout
 |-- LICENSE.txt
 |-- README.md
 ```
