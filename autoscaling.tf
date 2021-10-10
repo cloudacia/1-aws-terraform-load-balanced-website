@@ -1,4 +1,5 @@
 
+# AWS LAUNCH CONFIGURATION
 resource "aws_launch_configuration" "as_conf01" {
   name_prefix     = "web_config"
   image_id        = var.aws_amis[var.aws_region]
@@ -8,6 +9,7 @@ resource "aws_launch_configuration" "as_conf01" {
   user_data       = filebase64("script.sh")
 }
 
+# AWS AUTO SCALING GROUP
 resource "aws_autoscaling_group" "as01" {
   vpc_zone_identifier  = [aws_subnet.subnet02.id, aws_subnet.subnet04.id]
   name                 = "as01"
@@ -18,6 +20,7 @@ resource "aws_autoscaling_group" "as01" {
   target_group_arns    = [aws_alb_target_group.alb_tg_webserver.arn]
 }
 
+# AWS AUTO SCALING POLICY UP
 resource "aws_autoscaling_policy" "web_policy_up" {
   name                   = "web_policy_up"
   scaling_adjustment     = 2
@@ -26,6 +29,7 @@ resource "aws_autoscaling_policy" "web_policy_up" {
   autoscaling_group_name = aws_autoscaling_group.as01.id
 }
 
+# AWS CLOUD WATCH ALARM UP
 resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_up" {
   alarm_name          = "web_cpu_alarm_up"
   comparison_operator = "GreaterThanOrEqualToThreshold"
@@ -44,6 +48,7 @@ resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_up" {
   alarm_actions     = [aws_autoscaling_policy.web_policy_up.arn]
 }
 
+# AWS AUTO SCALING POLICY DOWN
 resource "aws_autoscaling_policy" "web_policy_down" {
   name                   = "web_policy_down"
   scaling_adjustment     = -2
@@ -52,6 +57,7 @@ resource "aws_autoscaling_policy" "web_policy_down" {
   autoscaling_group_name = aws_autoscaling_group.as01.id
 }
 
+# AWS CLOUD WATCH ALARM DOWN
 resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_down" {
   alarm_name          = "web_cpu_alarm_down"
   comparison_operator = "LessThanOrEqualToThreshold"

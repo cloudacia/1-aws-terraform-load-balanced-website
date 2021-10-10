@@ -1,4 +1,5 @@
 
+# AWS APPLICATION LOAD BALANCER
 resource "aws_lb" "alb01" {
   name                       = "alb01"
   internal                   = false
@@ -8,12 +9,14 @@ resource "aws_lb" "alb01" {
   enable_deletion_protection = false
 }
 
+# AWS ALB TARGET GROUP
 resource "aws_alb_target_group" "alb_tg_webserver" {
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.vpc_dev.id
 }
 
+# AWS ALB LISTENER
 resource "aws_alb_listener" "alb_listener_front_end" {
   load_balancer_arn = aws_lb.alb01.arn
   port              = "80"

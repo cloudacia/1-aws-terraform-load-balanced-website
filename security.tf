@@ -1,4 +1,5 @@
 
+# AWS SECURITY GROUP FOR EC2 INSTANCES
 resource "aws_security_group" "webserver" {
   name        = "webserver"
   description = "Allow incoming traffic to port 80/TCP"
@@ -22,6 +23,7 @@ resource "aws_security_group" "webserver" {
   }
 }
 
+# AWS SECURITY GROUP FOR THE LOAD BALANCER
 resource "aws_security_group" "alb" {
   name        = "alb"
   description = "Allow incoming traffic to port 80/TCP"
