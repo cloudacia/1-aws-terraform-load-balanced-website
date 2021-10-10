@@ -30,6 +30,7 @@ Deploy the code in your AWS account with Terraform
 |-- security.tf           # Security groups
 |-- ssh_keys.tf           # EC2 key
 |-- variables.tf          # Code variables
+|-- script.sh             # Script to install Nginx
 |-- ssh_keys              # ssh public key
 |-- LICENSE.txt
 |-- README.md
