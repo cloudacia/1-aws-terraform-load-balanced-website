@@ -41,7 +41,7 @@ Deploy the code in your AWS account with Terraform
 
 **Architecture**
 
-![Screenshot](rackspace.png)
+![Screenshot](diagram.png)
 
 **Contributing**
 
