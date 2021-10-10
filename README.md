@@ -14,6 +14,9 @@ Clone the repository locally in your system:
 
 Deploy the code in your AWS account with Terraform
 
+`cd terraform-lab01`
+
+
 `terraform init`
 
 
@@ -37,6 +40,8 @@ Deploy the code in your AWS account with Terraform
 ```
 
 **Architecture**
+
+![alt text](http:/github.com/cloudacia/rackspace.png)
 
 **Contributing**
 
