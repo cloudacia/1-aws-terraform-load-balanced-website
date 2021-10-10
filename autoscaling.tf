@@ -29,7 +29,7 @@ resource "aws_autoscaling_policy" "web_policy_up" {
   autoscaling_group_name = aws_autoscaling_group.as01.id
 }
 
-# AWS CLOUD WATCH ALARM UP
+# AWS CLOUDWATCH ALARM UP
 resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_up" {
   alarm_name          = "web_cpu_alarm_up"
   comparison_operator = "GreaterThanOrEqualToThreshold"
@@ -57,7 +57,7 @@ resource "aws_autoscaling_policy" "web_policy_down" {
   autoscaling_group_name = aws_autoscaling_group.as01.id
 }
 
-# AWS CLOUD WATCH ALARM DOWN
+# AWS CLOUDWATCH ALARM DOWN
 resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_down" {
   alarm_name          = "web_cpu_alarm_down"
   comparison_operator = "LessThanOrEqualToThreshold"
