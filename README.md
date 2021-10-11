@@ -32,9 +32,9 @@ Deploy the code in your AWS account with Terraform
 |-- loadbalancer.tf       # Load balancer and target group
 |-- security.tf           # Security groups
 |-- ssh_keys.tf           # EC2 key
-|-- variables.tf          # Code variables
+|-- variables.tf          # Variables
 |-- output.tf             # Output values
-|-- script.sh             # Script to install Nginx
+|-- script.sh             # Initialization script
 |-- ssh_keys              # ssh public key
 |-- diagram.png           # AWS network layout
 |-- LICENSE.txt
