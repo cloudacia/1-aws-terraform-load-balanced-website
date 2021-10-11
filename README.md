@@ -36,7 +36,7 @@ Deploy the code in your AWS account with Terraform
 |-- output.tf             # Output values
 |-- script.sh             # Script to install Nginx
 |-- ssh_keys              # ssh public key
-|-- diagram.png         # AWS network layout
+|-- diagram.png           # AWS network layout
 |-- LICENSE.txt
 |-- README.md
 ```
