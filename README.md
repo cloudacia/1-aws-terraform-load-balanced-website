@@ -26,7 +26,7 @@ Deploy the code in your AWS account with Terraform
 **Folder structure options and naming conventions for software projects**
 ```
 .
-|-- main.tf               # AWS provider configuration
+|-- main.tf               # AWS provider's configuration
 |-- networking.tf         # VPC, subnet, routing tables, etc.
 |-- autoscaling.tf        # AutoScaling and Launch configuration
 |-- loadbalancer.tf       # Load balancer and target group
