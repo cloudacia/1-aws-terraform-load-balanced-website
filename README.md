@@ -60,4 +60,5 @@ It is distributed under the MIT License. See LICENSE.txt for more information.
 **Contact**
 
 Name: Eugenio Duarte
+
 Email: eduarte@cloudacia.com
