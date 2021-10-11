@@ -35,7 +35,7 @@ Deploy the code in your AWS account with Terraform
 |-- variables.tf          # Variables
 |-- output.tf             # Output values
 |-- script.sh             # Initialization script
-|-- ssh_keys              # ssh public key
+|-- ssh_keys              # SSH public key
 |-- diagram.png           # AWS network layout
 |-- LICENSE.txt
 |-- README.md
