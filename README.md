@@ -6,6 +6,28 @@ This project aims to deploy a sample website in a load-balanced, highly availabl
 
 Terraform manages the deployment.
 
+**Requirements**
+
+1. AWS account
+2. IAM user with admin privileges
+3. Access and secret keys
+4. AWS CLI
+5. Terraform installed
+
+**AWS resources created**
+
+1 x VPC
+2 x Private subnets
+2 x Public subnets
+2 x NAT Gateways
+1 x Internet Gateway
+1 x ALB
+1 x ASG
+1 x Launch Configuration
+4 x EC2
+2 x Security Groups
+2 x CloudWatch Alarms
+
 **Getting started**
 
 Clone the repository locally in your system:
@@ -16,11 +38,15 @@ Deploy the code in your AWS account with Terraform
 
 `cd terraform-lab01`
 
-
 `terraform init`
 
+`terraform validate`
+
+`terraform plan`
 
 `terraform apply`
+
+`terraform destroy`
 
 
 **Folder structure options and naming conventions for software projects**
