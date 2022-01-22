@@ -58,9 +58,11 @@ Deploy the code in your AWS account with Terraform
 |-- loadbalancer.tf       # Load balancer and target group
 |-- security.tf           # Security groups
 |-- ssh_keys.tf           # EC2 key
+|-- launch_config.tf      # Launch Configuration
+|-- monitoring.tf         # CloudWatch Alarms
 |-- variables.tf          # Variables
 |-- output.tf             # Output values
-|-- script.sh             # Initialization script
+|-- bootstrap_scripts     # EC2 initialization scripts
 |-- ssh_keys              # SSH public key
 |-- diagram.png           # AWS network layout
 |-- LICENSE.txt
