@@ -1,12 +1,5 @@
 pipeline {
-    agent any
-
-    parameters {
-        string(name: 'environment', defaultValue: 'terraform', description: 'Workspace/environment file to use for deployment')
-        booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
-        booleanParam(name: 'destroy', defaultValue: false, description: 'Destroy Terraform build?')
-
-    }
+    agent any    
 
      environment {
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
@@ -36,6 +29,12 @@ pipeline {
         stage('plan') {
           steps{
             sh 'terraform plan -input=false -out tfplan'
+          }
+        }
+
+        stage('apply') {
+          steps{
+            sh 'terraform apply "tfplan" -auto-approve'
           }
         }
       }
