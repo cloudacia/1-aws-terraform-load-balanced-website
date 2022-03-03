@@ -1,5 +1,5 @@
 pipeline {
-    agent any    
+    agent any
 
      environment {
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
@@ -34,7 +34,7 @@ pipeline {
 
         stage('apply') {
           steps{
-            sh 'terraform apply "tfplan" -auto-approve'
+            sh 'terraform apply -auto-approve'
           }
         }
       }
