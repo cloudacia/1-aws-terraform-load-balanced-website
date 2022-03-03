@@ -26,12 +26,18 @@ pipeline {
                 }
             }
 
-        stage('Plan') {
+        stage('init') {
             steps {
                 sh 'terraform init -input=false'
-
-                sh "terraform plan -input=false -out tfplan "
             }
+        }
+
+        stage('plan') {
+          steps{
+            sh 'terraform plan -input=false -out tfplan'
+          }
+
+
         }
       //  stage('Approval') {
       //     when {
