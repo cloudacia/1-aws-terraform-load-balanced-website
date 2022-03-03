@@ -17,13 +17,8 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                 script{
-                        dir("terraform")
-                        {
-                            git "https://github.com/cloudacia/1-aws-terraform-load-balanced-website.git"
-                        }
-                    }
-                }
+              git "https://github.com/cloudacia/1-aws-terraform-load-balanced-website.git"
+              }
             }
 
         stage('init') {
