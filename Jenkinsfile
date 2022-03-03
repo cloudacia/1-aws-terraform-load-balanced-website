@@ -34,7 +34,7 @@ pipeline {
 
         stage('plan') {
           steps{
-            sh 'terraform plan -input=false -out tfplan'
+            sh 'terraform plan -input=false -out tfplan -lock=false'
           }
         }
 
@@ -53,5 +53,5 @@ pipeline {
            sh "terraform destroy --auto-approve"
           }
         }
-      }      
+      }
     }
