@@ -32,6 +32,12 @@ pipeline {
             }
         }
 
+        stage('validate') {
+          steps{
+            sh 'terraform validate'
+          }
+        }
+
         stage('plan') {
           steps{
             sh 'terraform plan -input=false -out tfplan'
