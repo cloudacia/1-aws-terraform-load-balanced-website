@@ -7,4 +7,13 @@ resource "aws_launch_configuration" "as_conf01" {
   key_name        = aws_key_pair.ec2_public_key.id
   security_groups = [aws_security_group.webserver.id]
   user_data       = filebase64("bootstrap_scripts/script.sh")
+
+  root_block_device {
+    delete_on_termination = true
+  }
+
+  tags = {
+    Name = "Development Environment"
+  }
+
 }
