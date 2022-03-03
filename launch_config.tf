@@ -11,9 +11,4 @@ resource "aws_launch_configuration" "as_conf01" {
   root_block_device {
     delete_on_termination = true
   }
-
-  tags = {
-    Name = "Development Environment"
-  }
-
 }
